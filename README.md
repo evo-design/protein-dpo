@@ -1,6 +1,6 @@
 # protein-dpo
 
-<img width="934" alt="Screenshot 2024-05-16 at 2 13 13 PM" src="https://github.com/evo-design/protein-dpo/assets/63631602/5b347047-ec4d-4008-b3cf-3040e0d964ce">
+<img width="875" alt="Screenshot 2024-05-20 at 10 34 10 AM" src="https://github.com/evo-design/protein-dpo/assets/63631602/66f67770-0d84-4a28-aa12-36bc2fbc9a52">
 
 ## Introduction
 
