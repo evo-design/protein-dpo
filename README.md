@@ -42,7 +42,7 @@ wget https://dl.fbaipublicfiles.com/fair-esm/models/esm_if1_gvp4_t16_142M_UR50.p
 
 ## Sampling
 
-Sampling is simply a slightly modified script from the [ESM-IF1](https://github.com/facebookresearch/esm/tree/main/esm/inverse_folding) github
+Sampling is simply a slightly modified script from the [ESM-IF1](https://github.com/facebookresearch/esm/tree/main/esm/inverse_folding) github. Note, stabilization of any protein backbone with ProteinDPO is not guaranteed to preserve its function, thus we strongly recommend functional or heavily conserved residues be preserved with the `--fixed_pos` argument.
 
 1. Run The Sampling Script
 
