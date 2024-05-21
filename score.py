@@ -8,7 +8,7 @@ import os
 from tqdm import tqdm
 
 #args
-parser = argparse.ArgumentParser(description='Training script with command-line arguments.')
+parser = argparse.ArgumentParser(description='Scoring Script for evaluating likelihoods of protein variants.')
 parser.add_argument('--weights_path', type=str, required=False, help='path to model weights')
 parser.add_argument('--dataset_path', type=str, required=True, help='path to csv containing sequences/mutations')
 parser.add_argument('--feature', type=str, required = False, help='name of fitness value')
