@@ -70,7 +70,7 @@ aa_seq : Amino acid sequence of mutant variant
 WT_Name : Path to the native PDB file 
 <feature> : Scalar label of the feature for optimization
 wt_seq: Amino acid sequence of the native sequence
-mut_type: comma seperated string of <native_aa>:<pos>:<mutant_aa>
+mut_type: comma seperated string of <native_aa>:<pos>:<mutant_aa>,<native_aa>:<pos>:<mutant_aa>,... etc.
 ```
 
 2. Run Scoring Script
