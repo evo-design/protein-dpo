@@ -98,6 +98,7 @@ Located at the path given by the `--out_path` argument will be a csv containing 
 
 Please cite the following preprint when referencing ProteinDPO.
 
+```
 @article {widatalla2024aligning,
 	author = {Widatalla, Talal and Rafailov, Rafael and Hie, Brian},
 	title = {Aligning protein generative models with experimental fitness via Direct Preference Optimization},
@@ -107,7 +108,7 @@ Please cite the following preprint when referencing ProteinDPO.
 	URL = {https://www.biorxiv.org/content/early/2024/05/21/2024.05.20.595026},
 	journal = {bioRxiv}
 }
-
+```
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
