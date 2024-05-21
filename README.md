@@ -67,7 +67,7 @@ Additional arguments:
 
 ```
 aa_seq : Amino acid sequence of mutant variant
-WT_Name : Name of the native PDB file (including ".pdb")
+WT_Name : Path to the native PDB file 
 <feature> : Scalar label of the feature for optimization
 wt_seq: Amino acid sequence of the native sequence
 mut_type: comma seperated string of <native_aa>:<pos>:<mutant_aa>
@@ -76,7 +76,7 @@ mut_type: comma seperated string of <native_aa>:<pos>:<mutant_aa>
 2. Run Scoring Script
 
 ```
-python score.py --dataset <path_to_sequences_csv> --weights_path <path_to_model_weights> [additional_arguments]
+python score.py --dataset_path <path_to_sequences_csv> --weights_path <path_to_model_weights> [additional_arguments]
 ```
 
 Replace `<path_to_model_weights>` with the path to the trained protein-dpo model or any ESM-IF1 compatible weights of your choice. If no `weights_path` is provided the script defaults to the vanilla model weights.
@@ -87,7 +87,6 @@ Additional arguments:
 --normalize: pass if you want to normalize likelihood with wild-type sequence
 --whole_seq: pass if you want to utilize liklihood of entire sequence, not just mutated residue(s)
 --sum: pass if you want to sum likelihoods instead of averaging
---pdb_dir: directory containing pdbs corresponding to input sequences
 --out_path: path for output csv
 ```
 
