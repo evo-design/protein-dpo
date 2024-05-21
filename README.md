@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This repository holds inference and training code for ProteinDPO (**P**rotein **D**irect **P**reference **O**ptimization), a preference optimized structure-conditioned protein language model based on [ESM-IF1](https://github.com/facebookresearch/esm/tree/main/esm/inverse_folding). We describe ProteinFlex in the paper “Aligning Protein Generative Models with Experimental Fitness via Direct Preference Optimization”.
+This repository holds inference and training code for ProteinDPO (**P**rotein **D**irect **P**reference **O**ptimization), a preference optimized structure-conditioned protein language model based on [ESM-IF1](https://github.com/facebookresearch/esm/tree/main/esm/inverse_folding). We describe ProteinDPO in the paper [“Aligning Protein Generative Models with Experimental Fitness via Direct Preference Optimization”](https://www.biorxiv.org/content/early/2024/05/21/2024.05.20.595026).
 
 
 ## Getting Started
@@ -93,6 +93,21 @@ Additional arguments:
 3. Analyze Results
 
 Located at the path given by the `--out_path` argument will be a csv containing the specified model likelihood for each sequence.
+
+## Citation
+
+Please cite the following preprint when referencing ProteinDPO.
+
+@article {widatalla2024aligning,
+	author = {Widatalla, Talal and Rafailov, Rafael and Hie, Brian},
+	title = {Aligning protein generative models with experimental fitness via Direct Preference Optimization},
+	year = {2024},
+	doi = {10.1101/2024.05.20.595026},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2024/05/21/2024.05.20.595026},
+	journal = {bioRxiv}
+}
+
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
