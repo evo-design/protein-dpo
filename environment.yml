@@ -7,6 +7,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - python=3.10
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=2_gnu
   - aiohttp=3.9.0=py39h5eee18b_0
@@ -180,7 +181,6 @@ dependencies:
       - docker-pycreds==0.4.0
       - docutils==0.16
       - easy-parallel==0.1.6
-      - fair-esm==2.0.1
       - fairseq==0.12.2
       - fonttools==4.47.2
       - freesasa==2.2.1
