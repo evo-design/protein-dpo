@@ -20,13 +20,19 @@ git clone https://github.com/evo-design/protein-dpo.git
 cd protein-dpo
 ```
 
-3. Use conda to install required dependencies:
+3. Use conda and pip to install required dependencies:
 
 Use the `environment.yml` file provided in this repository to create and activate a Conda environment with all the necessary dependencies.
 
 ```
 conda env create -f environment.yml
 conda activate <environment_name>
+```
+
+Pip install the most recent esm package from the Github repository.
+
+```
+pip install git+https://github.com/facebookresearch/esm.git
 ```
 
 4. Download Model Weights
@@ -70,7 +76,7 @@ aa_seq : Amino acid sequence of mutant variant
 WT_Name : Path to the native PDB file 
 <feature> : Scalar label of the feature for optimization
 wt_seq: Amino acid sequence of the native sequence
-mut_type: comma seperated string of <native_aa>:<pos>:<mutant_aa>,<native_aa>:<pos>:<mutant_aa>,... etc.
+mut_type: string of mutation (eg. <native_aa><pos><mutant_aa>), separate simulatenous mutations with colons (eg. <native_aa><pos><mutant_aa>:<native_aa><pos><mutant_aa>:... etc.)
 ```
 
 2. Run Scoring Script
