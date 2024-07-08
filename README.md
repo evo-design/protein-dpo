@@ -79,6 +79,8 @@ wt_seq: Amino acid sequence of the native sequence
 mut_type: string of mutation (eg. <native_aa><pos><mutant_aa>), separate simulatenous mutations with colons (eg. <native_aa><pos><mutant_aa>:<native_aa><pos><mutant_aa>:... etc.)
 ```
 
+The file `fireprot_homologue_free.csv` is provided as an example. Note to score this csv, PDB files need to be downloaded and the 'WT_Name' column updated with their respective paths. 
+
 2. Run Scoring Script
 
 ```
