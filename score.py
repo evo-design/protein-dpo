@@ -7,6 +7,12 @@ import argparse
 import os
 from tqdm import tqdm
 
+def add_masked_coords(coord, seq):
+    mask_idx = np.array([res == 'X' for res in seq])
+    new_coords = np.full((len(seq), 3, 3), np.inf, dtype = coord.dtype)
+    new_coords[~mask_idx] = coord
+    return new_coords
+
 #args
 parser = argparse.ArgumentParser(description='Scoring Script for evaluating likelihoods of protein variants.')
 parser.add_argument('--weights_path', type=str, required=False, help='path to model weights')
@@ -49,11 +55,15 @@ for pdb_path, group_df in tqdm(pdb_grouped, total = len(pdb_grouped)):
     coord, _= extract_coords_from_structure(structure)
     for seq, feature, muts in zip(group_df['aa_seq'], group_df[args.feature], group_df['mut_type']):
         mutation_info = [(mut[0], int(mut[1:-1]), mut[-1]) for mut in muts.split(':') if muts != 'wt']
-        
+
         #check numbering is correct for mutated seq
         for wt_res, mut_idx, mut_res in mutation_info:
             assert mut_res == seq[mut_idx], 'mutation idx is incorrect'
 
+        #structure has missing coordinates demarcated as an 'X' residue in the sequence
+        if 'X' in seq:
+            coord = add_masked_coords(coord, seq)
+        
         if args.normalize:
             wt_lls = []
             wt_seq = seq
