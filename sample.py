@@ -12,8 +12,9 @@ def sample_seq_singlechain(model, alphabet, args):
     partial_seq = ['<mask>'] * len(seq)
 
     if args.fixed_pos is not None:
-        for fixed_idx in fixed:
-            partial_seq[fixed_idx - 1] = seq[fixed_idx - 1]
+        fixed_positions = [int(pos) for pos in args.fixed_pos.split(",")]
+        for fixed_pos in fixed_positions:
+            partial_seq[fixed_pos - 1] = seq[fixed_pos - 1]
             
     print(f'Saving sampled sequences to {args.outpath}.')
 
