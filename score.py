@@ -46,7 +46,7 @@ print('Loading Data')
 dataset = pd.read_csv(args.dataset_path)
 
 # Initialize output dictionary
-outputs_dict = {'vals': [], 'likhoods': []}
+outputs_dict = {'vals': [], 'scores': []}
 
 # Score sequences
 print('Scoring Sequences')
@@ -118,7 +118,7 @@ for pdb_path, group_df in tqdm(pdb_grouped, total=len(pdb_grouped)):
 
         # Store results
         outputs_dict['vals'].append(feature)
-        outputs_dict['likhoods'].append(avg_ll)
+        outputs_dict['scores'].append(avg_ll)
         
     # Save results
     out_df = pd.DataFrame(outputs_dict).T

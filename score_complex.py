@@ -19,8 +19,8 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='Protein sequence scoring with ESM-IF.')
     
     # String arguments
-    parser.add_argument('--name', type=str, required=False, 
-                        help='Name of model')
+    parser.add_argument('--weights_path', type=str, required=False, 
+                        help='Path to weights for the model')
     parser.add_argument('--device', type=str, default='0', required=False, 
                         help='Which CUDA device to use')
     parser.add_argument('--dataset', type=str, default='skempi', required=False, 
@@ -79,7 +79,7 @@ def main():
     dataset = pd.read_csv(args.dataset_path)
     
     # Initialize output dictionary
-    outputs_dict = {'vals': [], 'likhoods': []}
+    outputs_dict = {'vals': [], 'scores': []}
     
     # Score sequences
     print('Scoring Sequences')
@@ -176,7 +176,7 @@ def main():
             
             # Store results
             outputs_dict['vals'].append(row[args.feature])
-            outputs_dict['likhoods'].append(avg_ll)
+            outputs_dict['scores'].append(avg_ll)
     
     # Save results to CSV
     out_df = pd.DataFrame(outputs_dict)
