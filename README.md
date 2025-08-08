@@ -7,7 +7,7 @@
 This repository holds inference and training code for ProteinDPO (**P**rotein **D**irect **P**reference **O**ptimization), a preference optimized structure-conditioned protein language model based on [ESM-IF1](https://github.com/facebookresearch/esm/tree/main/esm/inverse_folding). We describe ProteinDPO in the paper [“Aligning Protein Generative Models with Experimental Fitness via Direct Preference Optimization”](https://www.biorxiv.org/content/early/2024/05/21/2024.05.20.595026).
 
 
-## Getting Started
+## Getting Started 
 
 1. Clone this repository:
 
@@ -46,6 +46,8 @@ cd weights/
 wget https://dl.fbaipublicfiles.com/fair-esm/models/esm_if1_gvp4_t16_142M_UR50.pt
 ```
 
+Total time: ~10 min
+
 ## Sampling
 
 Sampling is simply a slightly modified script from the [ESM-IF1](https://github.com/facebookresearch/esm/tree/main/esm/inverse_folding) github. Note, stabilization of any protein backbone with ProteinDPO is not guaranteed to preserve its function, thus we strongly recommend functional or heavily conserved residues be preserved with the `--fixed_pos` argument.
@@ -66,6 +68,8 @@ Additional arguments:
 --num-samples: desired number of samples
 --fixed_pos: positions to fix for sampling, first residue is 1 not 0
 ```
+
+Total time: ~100ms-1s/sample on GPU
 
 ## Scoring
 
@@ -101,6 +105,8 @@ Additional arguments:
 3. Analyze Results
 
 Located at the path given by the `--out_path` argument will be a csv containing the specified model likelihood for each sequence.
+
+Total time: ~100ms-1s/sample on GPU
 
 ## Citation
 
