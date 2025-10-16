@@ -59,11 +59,11 @@ def parse_arguments():
             default=1000,
     )
     parser.add_argument(
-        '--weights_path', type=str, default=None', 
+        '--weights_path', type=str, default=None, 
         required =False, help='path'
     )
     parser.add_argument(
-        '--fixed_pos', type=str, default=None', 
+        '--fixed_pos', type=str, default=None,
         required =False, help='path'
     )
     return parser.parse_args()
@@ -73,11 +73,19 @@ def parse_arguments():
 if __name__ == '__main__':
     args = parse_arguments()
     model, alphabet = esm.pretrained.load_model_and_alphabet_local('weights/esm_if1_gvp4_t16_142M_UR50.pt')
-    model.eval()
-    model.to('cuda')
 
     if args.weights_path is not None:
         state_dict = torch.load(args.weights_path)
         model.load_state_dict(state_dict, strict = True)   
     
+    # Set CUDA device and determine if GPU is available
+    if torch.cuda.is_available():
+        device = f'cuda:0'
+        model = model.to(device)
+        print('Running on GPU')
+    else:
+        device = 'cpu'
+        print('Running on CPU')
+
+    model.eval()
     sample_seq_singlechain(model, alphabet, args)

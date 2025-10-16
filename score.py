@@ -27,19 +27,24 @@ args = parser.parse_args()
 
 # Initialize model
 print('Loading Model')
-model, alphabet = esm.pretrained.load_model_and_alphabet_local('weights/esm_if1_gvp4_t16_142M_UR50.pt')
+try:
+    model, alphabet = esm.pretrained.load_model_and_alphabet_local('weights/esm_if1_gvp4_t16_142M_UR50.pt')
+except:
+    "Weights for default model not found, did you download them?"
 
 # Load custom weights if provided
 if args.weights_path is not None:
     state_dict = torch.load(args.weights_path)
-    model.load_state_dict(state_dict, strict=True)
+    model.load_state_dict(state_dict, strict = True)
 
-# Set device (GPU or CPU)
+# Set CUDA device and determine if GPU is available
 if torch.cuda.is_available():
     device = f'cuda:0'
     model = model.to(device)
+    print('Running on GPU')
 else:
     device = 'cpu'
+    print('Running on CPU')
 
 # Load dataset
 print('Loading Data')

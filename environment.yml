@@ -1,4 +1,4 @@
-name: flex
+name: dpo
 
 channels:
   - bioconda
@@ -7,7 +7,6 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.10
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=2_gnu
   - aiohttp=3.9.0=py39h5eee18b_0

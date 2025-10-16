@@ -26,7 +26,7 @@ Use the `environment.yml` file provided in this repository to create and activat
 
 ```
 conda env create -f environment.yml
-conda activate <environment_name>
+conda activate dpo
 ```
 
 Pip install the most recent esm package from the Github repository.

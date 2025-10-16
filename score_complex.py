@@ -29,7 +29,8 @@ def parse_arguments():
                         help='Name of fitness value to score against')
     parser.add_argument('--dataset_path', type=str, required=True,
                         help='Path to the dataset CSV file')
-    parser.add_argument('--out_path', type=str, required=True,
+    parser.add_argument('--out_path', type=str, required=False,
+                        default='scores_complex.csv',
                         help='Path for the output CSV file')
     
     # Binary/flag arguments
@@ -65,7 +66,6 @@ def main():
         model.load_state_dict(state_dict, strict = True)
 
     # Set CUDA device and determine if GPU is available
-    os.environ["CUDA_VISIBLE_DEVICES"] = args.device
     if torch.cuda.is_available():
         device = f'cuda:0'
         model = model.to(device)
