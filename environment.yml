@@ -119,7 +119,7 @@ dependencies:
   - perl=5.32.1=7_hd590300_perl5
   - pigz=2.6=h27cfd23_0
   - pillow=10.0.1=py39ha6cbd5a_0
-  - pip=23.3.1=py39h06a4308_0
+  - pip>=25.0
   - pyasn1=0.4.8=pyhd3eb1b0_0
   - pyasn1-modules=0.2.8=py_0
   - pycparser=2.21=pyhd3eb1b0_0
@@ -201,7 +201,7 @@ dependencies:
       - natsort==8.4.0
       - ndindex==1.7
       - numexpr==2.8.8
-      - omegaconf==2.0.6
+      - omegaconf>=2.1
       - opencv-python==4.9.0.80
       - pandas==2.1.4
       - pathos==0.3.1
